@@ -304,5 +304,5 @@ AHFloat BounceEaseInOut(AHFloat p)
 
 AHFloat InstantEaseIn(AHFloat p)
 {
-  return ceil(p);
+  return floor(p);
 }
