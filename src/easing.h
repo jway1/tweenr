@@ -82,6 +82,8 @@ extern "C" {
   AHFloat BounceEaseOut(AHFloat p);
   AHFloat BounceEaseInOut(AHFloat p);
 
+  AHFloat InstantEaseIn(AHFloat p);
+
 #ifdef __cplusplus
 }
 #endif

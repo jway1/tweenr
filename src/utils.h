@@ -37,6 +37,7 @@ enum Easer {
   bounce_in,
   bounce_out,
   bounce_in_out,
+  instant_in,
   UNKNOWN
 };
 static inline Easer get_easer(std::string ease) {
@@ -71,6 +72,7 @@ static inline Easer get_easer(std::string ease) {
   if (ease == "bounce-in") return bounce_in;
   if (ease == "bounce-out") return bounce_out;
   if (ease == "bounce-in-out") return bounce_in_out;
+  if (ease == "instant-in") return instant_in;
   return UNKNOWN;
 }
 
@@ -174,6 +176,9 @@ static inline std::vector<double> ease_seq(std::string easer, int length) {
     case bounce_in_out:
       res[i] = BounceEaseInOut(p);
       break;
+    case instant_in:
+      res[i] = InstantEaseIn(p);
+      break;
     case UNKNOWN:
       cpp11::stop("Unknown easing function");
     }
@@ -275,6 +280,9 @@ static inline double ease_pos(double p, std::string easer) {
     break;
   case bounce_in_out:
     p_new = BounceEaseInOut(p);
+    break;
+  case instant_in:
+    p_new = InstantEaseIn(p);
     break;
   case UNKNOWN:
     cpp11::stop("Unknown easing function");

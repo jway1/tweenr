@@ -32,7 +32,8 @@ validEase <- c(
   "back-in-out",
   "bounce-in",
   "bounce-out",
-  "bounce-in-out"
+  "bounce-in-out",
+  "instant-in"
 )
 
 #' @importFrom magrittr %>%
